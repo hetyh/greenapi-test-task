@@ -1,0 +1,32 @@
+{
+  "name": "greenapi-test-task",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "pm2 start dist/m1.js dist/m2.js -i 2 --watch",
+    "logs-m1": "pm2 logs m1 --raw | pino-pretty",
+    "logs-m2": "pm2 logs m2 --raw | pino-pretty",
+    "stop": "pm2 stop m1 m2",
+    "delete": "pm2 del m1 m2"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "The Unlicense",
+  "devDependencies": {
+    "@types/amqplib": "^0.10.1",
+    "@types/node": "^20.4.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.3",
+    "dotenv": "^16.3.1",
+    "fastify": "^4.21.0",
+    "pino": "^8.15.0",
+    "pino-pretty": "^10.2.0",
+    "pm2": "^5.3.0"
+  }
+}
